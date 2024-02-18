@@ -14,9 +14,63 @@ body{
     height: 100%;
     font-family: 'Poppins', sans-serif;
     color: #2b2b2b;
-    background-color: rgb(200, 218, 233);
+    background-color: #c8dae9;
     overflow-x: hidden;
 }
+
+.container{
+    width: 1150px;
+    height: 100%;
+    display: flex;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.supInfo{
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.supInfo .X-bar{
+    height: 1px;
+    width: 30%;
+    background-color: #2b2b2b;
+}
+
+.animatedTypingLabel{
+    font-size: 50px;
+    width: auto;
+}
+.animatedTypingLabel .label span{
+    color: #325fe6;
+    font-style: italic;
+    font-weight: 900;
+    position: relative;
+}
+
+.animatedTypingLabel .label span::before{
+    content: "";
+    background: #325fe6;
+    position: absolute;
+    height: 30px;
+    width: 2px;
+    top: 50%;
+    right: -8px;
+    transform: translateY(-45%);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50%{
+        opacity: 0;
+    }
+}
+
+
+/* Header Section */
 
 .header{
     display: flex;
@@ -27,15 +81,10 @@ body{
     text-transform: uppercase;
     position: fixed;
     top: 0;
-    /* border-bottom: 2px solid rgb(50, 95, 230); */
+    transition: .5s;
+    border-bottom: 1px solid transparent;
 }
 
-.container{
-    width: 1150px;
-    height: 100%;
-    display: flex;
-    align-content: center;
-}
 header .container{
     justify-content: space-between;
 }
@@ -77,6 +126,15 @@ header .container{
     border-top: 2px solid rgb(50, 95, 230);
 }
 
+.header.scrollHeader{
+    border-bottom: 2px solid rgb(50, 95, 230);
+    background-color: #c8dae9;
+    transition: .5s;
+}
+
+
+/* Banner Section */
+
 .banner{
     height: 100vh;
     width: 100%;
@@ -94,29 +152,18 @@ header .container{
     flex: 1;
 }
 
-.banner .container .leftSide .supInfo{
-    width: 100%;
-    text-transform: uppercase;
-    font-size: 15px;
-}
-
-.banner .container .leftSide .supInfo .X-bar{
-    height: 1px;
-    width: 30%;
-    background-color: #2b2b2b;
-}
 
 .banner .container .leftSide .mainInfo{
     width: 100%;
 }
 
 .banner .container .leftSide .mainInfo .name{
-    font-size: 72px;
+    font-size: 102px;
     color: #000;
 }
 
 .banner .container .leftSide .mainInfo .employment{
-    font-size: 32px;
+    font-size: 38px;
     margin-top: -20px;
 }
 
@@ -170,3 +217,16 @@ header .container{
     border-radius: 50%;
 }
 
+/* About-me Section */
+
+.about-me{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me .resume{
+    font-size: 30px;
+    margin-top: 20px;
+}
